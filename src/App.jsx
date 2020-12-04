@@ -3,6 +3,20 @@ import Card from './Card'
 import './App.scss'
 
 const App = () => {
+  const cards = document.querySelectorAll('.card')
+
+  cards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      removeActiveClasses()
+      card.classList.add('active')
+    })
+  })
+
+  const removeActiveClasses = () => {
+    cards.forEach((card) => {
+      card.classList.remove('active')
+    })
+  }
   return (
     <div className='container'>
       <Card
